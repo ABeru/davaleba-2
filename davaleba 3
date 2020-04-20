@@ -1,0 +1,55 @@
+struct post {
+    var name: String
+    var category: String
+    var rating: Double
+    
+}
+class blogger {
+    var username = "Beru"
+    var posts: [post] = []
+     func postebi(name: String, category: String, rating: Double) {
+        self.posts.append(post(name: name, category: category, rating: rating))
+    }
+   
+    func postss() {
+        for post in posts {
+            print("")
+            print("Name of the post: \(post.name)")
+            print("Category: \(post.category)")
+            print("Rating: \(post.rating)")
+            print("")
+        }
+    }
+func pop() {
+  var stuff: Double = 0
+     for post in posts {
+         if post.rating > stuff {
+             stuff = post.rating
+         }
+       else {
+            continue
+         }
+         print("Most popular post: \(post.name)")
+     }
+    }
+    
+    func avg() {
+       var sum: Double = 0
+        for post in posts {
+           sum += post.rating
+        }
+ 
+        print("Avarage rating: \(sum/Double(posts.count))")
+    }
+    }
+    let posti = blogger()
+
+ print("Blogger: \(posti.username)")
+
+posti.postebi(name: "Fexburti", category: "Sport", rating: 4.9)
+posti.postebi(name: "Covid-19", category: "News", rating: 4.3)
+posti.postebi(name: "Nvidia", category: "Computers", rating: 4.8)
+
+  posti.avg()
+ posti.pop()
+posti.postss()
