@@ -1,0 +1,29 @@
+extension String{
+    func krucio(string: String) -> (Vowels:Int, Consonants:Int, shemobrunebuli:String) {
+    var Vowels = 0, Consonants = 0
+    for character in string {
+        switch String(character) {
+            case "a","e","i","o","u":
+             Vowels+=1
+            case "b","c","d","f","g","h","j","k","l","m","n","p","q","r","s","t","v","w","x","y","z":
+             Consonants+=1
+            default: break
+        }
+        }
+    var o = [Character]()
+    for i in string {
+        o.append(i)
+    }
+        o.reverse()
+    let shemobrunebuli = String(o)
+
+
+    return (Vowels, Consonants, shemobrunebuli)
+}
+// print(count(string:"kote"))
+    
+    
+    
+}
+var str = "ameno"
+print(str.krucio)
